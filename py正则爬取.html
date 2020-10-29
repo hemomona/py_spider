@@ -1,0 +1,486 @@
+<head>
+<meta charset="utf-8"/>
+<link href="https://blog.csdn.net/qq_43194257/article/details/87361164" rel="canonical"/>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="webkit" name="renderer">
+<meta content="webkit" name="force-rendering">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content='{"pid": "blog", "spm":"1001.2101"}' name="report"/>
+<meta content="always" name="referrer"/>
+<meta content="no-siteapp" http-equiv="Cache-Control"><link href="#" media="handheld" rel="alternate"/>
+<meta content="5a59773ab8077d4a62bf469ab966a63b_1497598848" name="shenma-site-verification"/>
+<meta content="pc" name="applicable-device"/>
+<link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON"/>
+<title>python(正则表达式)_qq_43194257的博客-CSDN博客</title>
+<meta content="python(正则表达式)" name="keywords"/>
+<meta content='{"autorun":true,"install":true,"keyword":"python(正则表达式)"}' name="csdn-baidu-search"/>
+<meta content="通配符的使用通配符：    *: 代表任意多个字符    ?: 代表单个字符    .: 当前目录    ..:当前目录的上一级目录    [0-9]: 单个字符为0~9    [a-z]:    [A-Z]    [A-Za-z]    [0-9A-Za-Z]    [[:digit:]]:单个数字    [[:upper:]]:单个大写字符    [[:lower:..." name="description"/>
+<script src="//g.csdnimg.cn/tingyun/1.8.3/blog.js" type="text/javascript"></script>
+<link href="https://csdnimg.cn/release/blogv2/dist/pc/css/detail_enter-6c0a1ac420.min.css" rel="stylesheet" type="text/css"/>
+<script type="application/ld+json">{"@context":"https://ziyuan.baidu.com/contexts/cambrian.jsonld","@id":"https://blog.csdn.net/qq_43194257/article/details/87361164","appid":"1638831770136827","pubDate":"2019-02-17T19:01:03","title":"python(正则表达式)_qq_43194257的博客-CSDN博客","upDate":"2019-02-17T19:01:03"}</script>
+<link href="https://csdnimg.cn/release/blogv2/dist/pc/themesSkin/skin3-template/skin3-template-45808e735f.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+        var isCorporate = false;//注释删除enterprise
+        var username =  "qq_43194257";
+        var skinImg = "white";
+        var blog_address = "https://blog.csdn.net/qq_43194257";
+        var currentUserName = "";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/qq_43194257/article/details/87361164";
+        var blogUrl = "https://blog.csdn.net/";
+        var avatar = "https://profile.csdnimg.cn/E/5/6/3_qq_43194257";
+        var articleTitle = "python(正则表达式)";
+        var articleDesc = "通配符的使用通配符：    *: 代表任意多个字符    ?: 代表单个字符    .: 当前目录    ..:当前目录的上一级目录    [0-9]: 单个字符为0~9    [a-z]:    [A-Z]    [A-Za-z]    [0-9A-Za-Z]    [[:digit:]]:单个数字    [[:upper:]]:单个大写字符    [[:lower:...";
+        var articleTitles = "python(正则表达式)_qq_43194257的博客-CSDN博客";
+        var nickName = "qq_43194257";
+        var articleDetailUrl = "https://blog.csdn.net/qq_43194257/article/details/87361164";
+        if(window.location.host.split('.').length == 3) {
+            blog_address = blogUrl + username;
+        }
+        var skinStatus = "White";
+        var blogStaticHost = "https://csdnimg.cn/release/blogv2/"
+    </script>
+<script src="https://g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js,report/1.5.8/report.js" type="text/javascript"></script>
+<link href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css" rel="stylesheet" type="text/css"/>
+<style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+<script src="https://dup.baidustatic.com/js/ds.js"></script>
+</meta></meta></meta></head><div class="blog-content-box">
+<div class="article-header-box">
+<div class="article-header">
+<div class="article-title-box">
+<h1 class="title-article" id="articleContentId">python(正则表达式)</h1>
+</div>
+<div class="article-info-box">
+<div class="article-bar-top">
+<img alt="" class="article-type-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png"/>
+<div class="bar-content">
+<a class="follow-nickName" href="https://me.csdn.net/qq_43194257" rel="noopener" target="_blank">qq_43194257</a>
+<span class="time">2019-02-17 19:01:03</span>
+<img alt="" class="article-read-img article-heard-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes.png"/>
+<span class="read-count">29614</span>
+<a class="un-collection" data-report-click='{"mod":"popu_823","spm":"1001.2101.3001.4232","ab":"new"}' id="blog_detail_zk_collection">
+<img alt="" class="article-collect-img article-heard-img un-collect-status" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" style="display:inline-block"/>
+<img alt="" class="article-collect-img article-heard-img collect-status" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" style="display:none"/>
+<span class="name">收藏</span>
+<span class="get-collection">
+                            76
+                        </span>
+</a>
+</div>
+</div>
+<div class="blog-tags-box">
+<div class="tags-box artic-tag-box">
+</div>
+</div>
+<div class="up-time"><span>最后发布:2019-02-17 19:01:03</span><span>首次发布:2019-02-17 19:01:03</span></div>
+<div class="slide-content-box">
+<div class="article-copyright">
+<div class="creativecommons">
+                            版权声明：本文为博主原创文章，遵循<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank"> CC 4.0 BY-SA </a>版权协议，转载请附上原文出处链接和本声明。
+                        </div>
+<div class="article-source-link">
+                            本文链接：<a href="https://blog.csdn.net/qq_43194257/article/details/87361164" target="_blank">https://blog.csdn.net/qq_43194257/article/details/87361164</a>
+</div>
+</div>
+</div>
+<div class="operating">
+<a class="href-article-edit slide-toggle">版权</a>
+</div>
+</div>
+</div>
+</div>
+<article class="baidu_pl">
+<div class="article_content clearfix" id="article_content">
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-b5506197d8.css" rel="stylesheet"/>
+<div class="markdown_views prism-atom-one-dark" id="content_views">
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+<path d="M5,0 0,2.5 5,5z" id="raphael-marker-block" stroke-linecap="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+</svg>
+<h2><a id="_0"></a>通配符的使用</h2>
+<pre><code>通配符：
+    *: 代表任意多个字符
+    ?: 代表单个字符
+    .: 当前目录
+    ..:当前目录的上一级目录
+    [0-9]: 单个字符为0~9
+    [a-z]:
+    [A-Z]
+    [A-Za-z]
+    [0-9A-Za-Z]
+
+    [[:digit:]]:单个数字
+    [[:upper:]]:单个大写字符
+    [[:lower:]]:单个小写字符
+    [[:space:]]:单个空格
+</code></pre>
+<pre><code># 获取当前目录下以一个数字开头以.任意结尾的文件
+glob.glob('./[0-9].*')
+# 以任意多个字符开头以.gif结尾的文件
+glob.glob('*.txt')
+# 以任意单个字符开头以.gif结尾的文件
+glob.glob('?.txt')
+# 任意目录下的以任意多个字符开头以.txt结尾的文件，采用递归方式
+glob.glob('**/*.txt', recursive=True)
+# 当前目录下的所有目录，采用递归方式
+glob.glob('./**/', recursive=True)
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190215131935881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MjU3,size_16,color_FFFFFF,t_70"/></p>
+<pre><code>import os
+import glob
+
+files1 = [file for file in os.listdir('.') if file.endswith('.conf')]
+# 获取当前目录所有以.conf结尾的文件;
+files2=  glob.glob('./*.conf')
+print(files1)
+print(files2)
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2019021513390954.png"/></p>
+<h2><a id="_45"></a>正则表达式的常用方法</h2>
+<h4><a id="match_46"></a>match方法：</h4>
+<h6><a id="match_47"></a>match尝试从字符串的起始位置开始匹配</h6>
+<ul><li>如果起始位置没有匹配成功， 返回None;</li><li>如果起始位置匹配成功， 返回一个对象， 通过group方法获取匹配的内容;</li></ul>
+<pre><code># re:regular express 正则表达式
+aObj = re.match(r'we', 'wetoshello')
+print(aObj)
+print(aObj.group())
+
+# \d 单个数字
+# \D \d的取反 , 除了数字之外
+bObj = re.match(r'\d', '1westos')
+if bObj:
+    print(bObj.group())
+
+bObj = re.match(r'\D', '_westos')
+if bObj:
+    print(bObj.group())
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190215153231776.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MjU3,size_16,color_FFFFFF,t_70"/></p>
+<h4><a id="findall_68"></a>findall方法：</h4>
+<h6><a id="findall__69"></a>findall会扫描整个字符串， 获取匹配的所有内容;</h6>
+<pre><code>res = re.findall(r'\d\d', '阅读数为2 点赞数为10')
+print(res)
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217174749785.png"/></p>
+<h4><a id="search_77"></a>search方法：</h4>
+<h6><a id="search_SRE_78"></a>search会扫描整个字符串， 只返回第一个匹配成功的内容的SRE对象;</h6>
+<pre><code>resObj = re.search(r'\d', '阅读数为8 点赞数为10')
+
+if resObj:
+    print(resObj.group())
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217175125543.png"/></p>
+<h2><a id="06__88"></a>06_正则表达式的特殊字符类</h2>
+<h5><a id="_89"></a>字符类:</h5>
+<h6><a id="__90"></a>[ ]匹配括号内多个字符中的任意一个字符</h6>
+<h6><a id="___91"></a>[^ ]表示匹配除了括号内的任意一个字符</h6>
+<ul><li>[pP]ython</li><li>westos[pP]</li><li>[aeiou]</li><li>[a-z]：匹配任意一个小写字母</li><li>[A-Z]：匹配任意一个大写字母</li><li>[a-zA-Z0-9]：匹配任意一个小写或大写字母或数字</li><li>[^aeiou]</li><li>[^0-9]：匹配除了数字的任意一个字符</li></ul>
+<h4><a id="_101"></a>特殊字符类:</h4>
+<ul><li>.: 匹配除了\n之外的任意字符； [.\n]</li><li>\d: digit–(数字)， 匹配一个数字字符， 等价于[0-9]</li><li>\D: 匹配一个非数字字符， 等价于[^0-9]</li><li>\s: space(广义的空格: 空格, \t, \n, \r), 匹配单个任何的空白字符;</li><li>\S: 匹配除了单个任何的空白字符;</li><li>\w: 字母数字或者下划线, [a-zA-Z0-9_]</li><li>\W: 除了字母数字或者下划线, [^a-zA-Z0-9_]</li></ul>
+<pre><code>^: 在[]前面表示以什么开头，在[]里面表示除括号内字符之外的任意一个字符^: 以什么开头
+$: 以什么结尾
+$: 以什么结尾
+</code></pre>
+<pre><code>import re
+
+
+# 匹配数字
+# pattern = r'\d'
+pattern = r'[0-9]'
+string = "hello_1$%"
+print(re.findall(pattern, string))
+
+
+# 匹配字母数字或者下划线;
+# pattern = r'\w'
+pattern = r'[a-zA-Z0-9_]'
+string = "hello_1$%"
+print(re.findall(pattern, string))
+
+# 匹配除了字母数字或者下划线;
+# pattern = r'\W'
+pattern = r'[^a-zA-Z0-9_]'
+string = "hello_1$%"
+print(re.findall(pattern, string))
+
+# .: 匹配除了\n之外的任意字符； [.\n]
+print(re.findall(r'.', 'hello westos\n\t%$'))
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217180130484.png"/></p>
+<h2><a id="_144"></a>北美电话号码的合法性</h2>
+<pre><code>问题描述:
+    北美电话的常用格式:(eg: 2703877865)
+            前3位: 第一位是区号以2~9开头 , 第2位是0~8, 第三位数字可任意;
+            中间三位数字:第一位是交换机号, 以2~9开头, 后面两位任意
+            最后四位数字: 数字不做限制;
+# 传统正则
+pattern = r'[2-9][0-8]\d[2-9]\d\d\d\d\d\d'
+# 可以利用重复符号的方式
+pattern = r'[2-9][0-8]\d[2-9]\d{6}'
+</code></pre>
+<pre><code>import re
+
+def is_valid(pattern,tel):
+    telObj=re.search(pattern,tel)
+    if telObj:
+        print('%s合法' %(tel))
+    else:
+        print('%s不合法' %(tel))
+
+if __name__ == '__main__':
+    pattern = r'[2-9][0-8]\d[2-9]\d{6}'
+    is_valid(pattern,'2777777777')
+    is_valid(pattern,'1777777777')
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217181359258.png"/></p>
+<h2><a id="_174"></a>指定字符出现的次数</h2>
+<h4><a id="_175"></a>匹配字符出现次数:</h4>
+<pre><code> *: 代表前一个字符出现0次或者无限次；    \d*,  .*
+ +: 代表前一个字符出现一次或者无限次;     d+
+ ?: 代表前一个字符出现1次或者0次；   假设某些字符可省略， 也可以不省略的时候使用，即去贪婪
+</code></pre>
+<h4><a id="_182"></a>第二种方式:</h4>
+<pre><code>{m}: 前一个字符出现m次;
+{m,}: 前一个字符至少出现m次;  * == {0,}; + ==={1,}
+{m,n}: 前一个字符出现m次到n次; ? === {0,1}
+</code></pre>
+<pre><code>import re
+
+# *: 代表前一个字符出现0次或者无限次；    \d *,.*
+print(re.findall(r'\d*', '234'))
+print(re.findall(r'.*', 'hello223%'))
+print(re.findall(r'd*', 'ddhello223%'))
+
+
+#     +: 代表前一个字符出现一次或者无限次;     d+
+print(re.findall(r'd+', ''))
+print(re.findall(r'd+', 'dddderrttt'))
+print(re.findall(r'\d+', '阅读数: 8976 点赞数:900'))
+
+#  ?: 代表前一个字符出现1次或者0次；   假设某些字符可省略， 也可以不省略的时候使用
+# 2019-10
+print(re.findall(r'\d+-?\d+', '2019-10'))
+print(re.findall(r'\d+-?\d+', '201910'))
+print(re.findall(r'\d{4}-?\d{1,}', '2019-1'))
+print(re.findall(r'\d{4}-?\d{1,2}', '2019-10'))
+print(re.findall(r'\d+-?\d+', '201910'))
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217182153215.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MjU3,size_16,color_FFFFFF,t_70"/></p>
+<h2><a id="_213"></a>匹配电子邮箱的规则</h2>
+<pre><code> 练习: 匹配一个163邮箱;(xdshcdshvfhdvg@qq.com)  --- 如果想在正则里面匹配真实的. , \.
+      xdshcdshvfhdvg(可以由字母数字或者下划线组成， 但是不能以数字或者下划线开头； 位数是6-12之间)
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217183201457.png"/></p>
+<h2><a id="_220"></a>编译正则表达式</h2>
+<p>当需要匹配大量数据时，采用现编译正则表达式可以节省大量的时间</p>
+<pre><code>转义的实现:
+ + , ? , (), *, . 一定要转义
+ () ---有自己的用法， 对()进行转义
+ . ---有自己的用法， 对.进行转义
+</code></pre>
+<pre><code>"""
+要求：北美电话号码的格式为：
+			1234567890
+			123-456-7890
+			123.456.7890
+			123 456 7890
+			(123) 456 7890
+"""
+import random
+import re
+import time
+
+
+def timeit(f):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        res = f(*args, **kwargs)
+        end_time = time.time()
+        print("%s执行时间: %fs" % (f.__name__, end_time - start_time))
+        return res
+
+    return wrapper
+
+
+
+
+def createPhone():
+    with open('phoneText.txt', 'w') as f:
+        for i in range(1000000):
+            # 生成一个随机的电话号码;
+            phone = "".join([str(random.randint(0, 9)) for i in range(10)])
+            f.write(phone + '\n')
+
+
+
+
+@timeit
+def use_compile():
+    pattern = r"\(?[2-9][0-8]\d\)?[-\.\s]?[2-9]\d{2}[-\.\s]?\d{4}"
+    compilePattern = re.compile(pattern)
+
+    with open('phoneText.txt') as f:
+        for line in f:
+            phone = line.rstrip()
+            res = re.search(compilePattern, phone)
+            if res:
+                return True
+            return False
+
+
+@timeit
+def no_compile():
+    pattern = r"\(?[2-9][0-8]\d\)?[-\.\s]?[2-9]\d{2}[-\.\s]?\d{4}"
+    # pattern = r'\d{10}'
+    with open('phoneText.txt') as f:
+        for line in f:
+            phone = line.rstrip()
+            res = re.search(pattern, phone)
+            if res:
+                return True
+            return False
+
+
+if __name__ == '__main__':
+    # createPhone()
+    no_compile()
+    use_compile()
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217184401359.png"/></p>
+<h2><a id="_300"></a>正则表达式之分组操作</h2>
+<h4><a id="_301"></a>表示分组</h4>
+<ul><li>| : 匹配| 左右任意一个表达式即可;</li><li>(ab): 将括号中的字符作为一个分组</li><li>\num: 引用分组第num个匹配到的字符串</li><li>(?P): 分组起别名</li><li>(?P=name) : 引用分组的别名</li></ul>
+<pre><code>import re
+
+print(re.findall(r'westos|hello', "hellowestos"))
+# 进行分组的时候， findall方法只返回分组里面的内容;
+print(re.findall(r'(http|https)(.+)', 'http_hello'))
+
+# search
+sreObj = re.search(r'(http|https)(.+)', 'http_hello')
+if sreObj:
+    # group方法会返回匹配的所有内容;
+    print(sreObj.group())
+    # groups方法返回分组里面的内容;
+    print(sreObj.groups())
+
+
+
+# 需求: 获取标签里面的文字, 并判断标签是否成对出现?
+htmlStr = "&lt;html&gt;&lt;p&gt;welcome to westos!&lt;/p&gt;&lt;/html&gt;"
+pattern = r'&lt;(\w+)&gt;&lt;(\w+)&gt;(.+)&lt;/\2&gt;&lt;/\1&gt;'
+print(re.findall(pattern, htmlStr))
+print(re.findall(pattern, htmlStr)[0][2])
+
+# 需求: 分组起别名?
+htmlStr = "&lt;html&gt;&lt;p&gt;welcome to westos!&lt;/p&gt;&lt;/html&gt;"
+pattern = r'&lt;(?P&lt;FirstTag&gt;\w+)&gt;&lt;(?P&lt;SecondTag&gt;\w+)&gt;(?P&lt;Text&gt;.+)' \
+          r'&lt;/(?P=SecondTag)&gt;&lt;/(?P=FirstTag)&gt;'
+print(re.findall(pattern, htmlStr))
+sreObj = re.search(pattern, htmlStr)
+if sreObj:
+    print(sreObj.group())
+    print(sreObj.groups())
+    print(sreObj.groupdict())
+    print(sreObj.groupdict()['Text'])
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217184921495.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MjU3,size_16,color_FFFFFF,t_70"/></p>
+<h2><a id="URL_345"></a>练习之URL合法性验证</h2>
+<pre><code>问题描述:
+    检查某段给定的文本是否是一个符合需要的URL；
+
+思路:
+    1). 检查URL是否以web浏览器普遍采用的通信协议方案开头: http, https, ftp file
+    2). 协议后面紧跟 ://
+    3).  协议后面字符任意;
+</code></pre>
+<pre><code>import re
+def isUrl(url):
+    pattern = re.compile(r'^(http|https|ftp|file)://.+$')
+    resObj = re.search(pattern, url)
+    if resObj:
+        return  True
+    return  False
+
+
+if __name__ == '__main__':
+    print(isUrl('file:///tmp'))
+    print(isUrl('http://www.baidu.com'))
+    print(isUrl('https://www.baidu.com'))
+    print(isUrl('ftp://www.baidu.com'))
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217185026718.png"/></p>
+<h2><a id="_374"></a>北美电话号码的格式化</h2>
+<pre><code>"""
+统一格式为:
+            (123) 456-7890
+"""
+#位置分组的使用
+import re
+def isPhone(phone):
+    pattern = r"\(?([2-9][0-8]\d)\)?[-\.\s]?([2-9]\d{2})[-\.\s]?(\d{4})"
+    res = re.search(pattern, phone)
+    if res:
+        info = res.groups()  # 返回的是元组
+        formatPhone = "(%s) %s-%s" %(info[0], info[1], info[2])
+        print(formatPhone)
+        return True
+    return False
+
+print(isPhone('777-777-7777'))
+print(isPhone('(777) 777 7890'))
+</code></pre>
+<pre><code># 命名分组的使用
+import re
+def isPhone(phone):
+    pattern = r"\(?(?P&lt;firstNum&gt;[2-9][0-8]\d)\)?[-\.\s]?(?P&lt;secondNum&gt;[2-9]\d{2})" \
+              r"[-\.\s]?(?P&lt;thirdNum&gt;\d{4})"
+    res = re.search(pattern, phone)
+    if res:
+        info = res.groupdict()
+        formatPhone = "(%s) %s-%s" %(info['firstNum'],
+                                     info['secondNum'], info['thirdNum'])
+        print(formatPhone)
+        return True
+    return False
+
+print(isPhone('777-777-7777'))
+print(isPhone('(777) 777 7890'))
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217185411720.png"/></p>
+<h2><a id="_415"></a>匹配日期</h2>
+<pre><code>“““
+\1: 代表的是一定要与第一个分组的内容保持一致， 否则不匹配;
+\d{4}(\-|\/|.)\d{1,2}\1\d{1,2}
+“““
+import re
+
+date = '2019-10-10'
+pattern = r'\d{4}(\-|\/|.)\d{1,2}\1\d{1,2}'
+
+reObj = re.search(pattern, date)
+if reObj:
+    print(reObj.group())
+    print(reObj.groups())
+
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190217185852833.png"/></p>
+<h2><a id="_435"></a>匹配用户名</h2>
+<h6><a id="_u4e00Unicodeu9fa5Unicode_436"></a>字符串是否包含中文 []表示匹配方括号的中任意字符，\u4e00是Unicode中汉字的开始，\u9fa5则是Unicode中汉字的结束</h6>
+<pre><code>import re
+user = '西安邮电大学123'
+pattern = r'[\w\-\u4e00-\u9fa5]+'
+print(re.findall(pattern, user))
+</code></pre>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/201902171900542.png"/></p>
+</div>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-10218d227c.css" rel="stylesheet"/>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-6aa8c38f9a.css" rel="stylesheet"/>
+</div>
+</article>
+</div>
