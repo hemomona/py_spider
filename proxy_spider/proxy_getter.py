@@ -1,6 +1,6 @@
-from proxy_crawler import Crawler
-from proxy_setting import *
-from proxy_db import MysqlClient
+from proxy_spider.proxy_crawler import Crawler
+from proxy_spider.proxy_setting import *
+from proxy_spider.proxy_db import MysqlClient
 import sys
 
 class Getter():

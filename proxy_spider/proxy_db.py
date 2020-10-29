@@ -1,7 +1,7 @@
 import re
 import pymysql
-from proxy_dbError import PoolEmptyError
-from proxy_setting import *
+from proxy_spider.proxy_dbError import PoolEmptyError
+from proxy_spider.proxy_setting import *
 from random import choice
 
 class MysqlClient(object):

@@ -1,5 +1,5 @@
 import re
-from proxy_utils import get_page
+from proxy_spider.proxy_utils import get_page
 from pyquery import PyQuery as pq
 
 # 定义了一个 ProxyMetaclass，Crawl 类将它设置为元类，元类中实现了 new() 方法，

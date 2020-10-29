@@ -5,8 +5,8 @@ import aiohttp
 import time
 import sys
 from aiohttp import ClientError
-from proxy_db import MysqlClient
-from proxy_setting import *
+from proxy_spider.proxy_db import MysqlClient
+from proxy_spider.proxy_setting import *
 
 class Tester(object):
     def __init__(self):

@@ -1,9 +1,9 @@
 import time
 from multiprocessing import Process
-from proxy_api import app
-from proxy_getter import Getter
-from proxy_tester import Tester
-from proxy_setting import *
+from proxy_spider.proxy_api import app
+from proxy_spider.proxy_getter import Getter
+from proxy_spider.proxy_tester import Tester
+from proxy_spider.proxy_setting import *
 
 
 class Scheduler():
